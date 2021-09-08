@@ -1,0 +1,45 @@
+name: etravel_app
+description: A new Flutter project.
+
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  get:
+  google_fonts:
+  hexcolor:
+  eva_icons_flutter:
+  flutter_overboard:
+  country_list_pick: ^1.0.1+5
+  flutter_svg:
+  curved_navigation_bar: 
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/img/
+
+  fonts:
+    - family: lato
+      fonts:
+        - asset: fonts/lato.ttf
+        # - asset: fonts/Schyler-Italic.ttf
+        #   style: italic
+    - family: roboto
+      fonts:
+        - asset: fonts/roboto.ttf
+          # - asset: fonts/roboto.ttf
+          weight: 700
+  #
