@@ -20,7 +20,8 @@ class _RegisterPageState extends State<RegisterPage> {
 
   @override
   Widget build(BuildContext context) {
-    final padding = EdgeInsets.only(left: 50);
+    final padding = EdgeInsets.symmetric(horizontal: 50);
+
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -34,42 +35,46 @@ class _RegisterPageState extends State<RegisterPage> {
           ),
         ),
         child: ListView(
+          shrinkWrap: true,
+          primary: false,
           children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
+            SizedBox(
+              height: 30,
+            ),
+            Wrap(
+              alignment: WrapAlignment.start,
               children: [
-                SizedBox(
-                  height: 30,
-                ),
                 GestureDetector(
                   onTap: () => Get.back(),
                   child: Padding(
-                    padding: EdgeInsets.only(left: 20),
+                    padding: EdgeInsets.symmetric(horizontal: 20),
                     child: Icon(
                       Icons.arrow_back,
                       color: Colors.black54,
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: 40,
-                ),
-                Padding(
-                  padding: padding,
-                  child: Text('Register',
+              ],
+            ),
+            Padding(
+              padding: padding,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 40,
+                  ),
+                  Text('Register',
                       style: TextStyle(
                         fontFamily: 'Bold',
                         fontSize: 30,
                         color: Colors.black.withOpacity(.70),
                       )),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Padding(
-                  padding: padding,
-                  child: Text(
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Text(
                     'Follow the simple steps to register',
                     style: TextStyle(
                       fontSize: 15,
@@ -77,56 +82,48 @@ class _RegisterPageState extends State<RegisterPage> {
                       color: Colors.black45,
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: 40,
-                ),
-                Padding(
-                    padding: padding,
-                    child: Text(
-                      'Email',
-                      style: TextStyle(
-                        fontFamily: 'Bold',
-                        fontSize: 16,
-                        color: Colors.black54,
-                      ),
-                    )),
-                SizedBox(
-                  height: 5,
-                ),
-                field(
-                  'Email',
-                  Icons.email,
-                  false,
-                  TextInputType.emailAddress,
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Padding(
-                  padding: padding,
-                  child: Text('Password',
+                  SizedBox(
+                    height: 40,
+                  ),
+                  Text(
+                    'Email',
+                    style: TextStyle(
+                      fontFamily: 'Bold',
+                      fontSize: 16,
+                      color: Colors.black54,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  field(
+                    'Email',
+                    Icons.email,
+                    false,
+                    TextInputType.emailAddress,
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text('Password',
                       style: TextStyle(
                         fontFamily: 'Bold',
                         fontSize: 16,
                         color: Colors.black54,
                       )),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                field(
-                  'Password',
-                  Icons.lock,
-                  true,
-                  TextInputType.number,
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Padding(
-                  padding: padding,
-                  child: Container(
+                  SizedBox(
+                    height: 5,
+                  ),
+                  field(
+                    'Password',
+                    Icons.lock,
+                    true,
+                    TextInputType.number,
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Container(
                     child: Text('Country',
                         style: TextStyle(
                           fontFamily: 'Bold',
@@ -134,15 +131,11 @@ class _RegisterPageState extends State<RegisterPage> {
                           color: Colors.black54,
                         )),
                   ),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                    left: 37,
+                  SizedBox(
+                    height: 5,
                   ),
-                  child: Container(
+                  Container(
+                      width: Get.width,
                       decoration: BoxDecoration(
                         color: Colors.grey.shade100,
                         borderRadius: BorderRadius.circular(20),
@@ -151,215 +144,188 @@ class _RegisterPageState extends State<RegisterPage> {
                         ),
                       ),
                       child: countrySelect(Colors.black)),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Padding(
-                  padding: padding,
-                  child: Text('Phone',
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text('Phone',
                       style: TextStyle(
                         fontFamily: 'Bold',
                         fontSize: 16,
                         color: Colors.black54,
                       )),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                field(
-                  'Phone',
-                  Icons.call,
-                  false,
-                  TextInputType.number,
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Padding(
-                  padding: padding,
-                  child: Text('NID No',
+                  SizedBox(
+                    height: 5,
+                  ),
+                  field(
+                    'Phone',
+                    Icons.call,
+                    false,
+                    TextInputType.number,
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text('NID No',
                       style: TextStyle(
                         fontFamily: 'Bold',
                         fontSize: 16,
                         color: Colors.black54,
                       )),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                field(
-                  '(must) NID number',
-                  Icons.document_scanner,
-                  false,
-                  TextInputType.number,
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Padding(
-                  padding: padding,
-                  child: Text('Gender',
+                  SizedBox(
+                    height: 5,
+                  ),
+                  field(
+                    '(must) NID number',
+                    Icons.document_scanner,
+                    false,
+                    TextInputType.number,
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text('Gender',
                       style: TextStyle(
                         fontFamily: 'Bold',
                         fontSize: 16,
                         color: Colors.black54,
                       )),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                field(
-                  'Male/Female',
-                  Icons.male,
-                  false,
-                  TextInputType.number,
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Padding(
-                  padding: padding,
-                  child: Text('Account Type',
+                  SizedBox(
+                    height: 5,
+                  ),
+                  field(
+                    'Male/Female',
+                    Icons.male,
+                    false,
+                    TextInputType.number,
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text('Account Type',
                       style: TextStyle(
                         fontFamily: 'Bold',
                         fontSize: 16,
                         color: Colors.black54,
                       )),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                field(
-                  'Travel/ Guide/ Both',
-                  Icons.card_travel,
-                  false,
-                  TextInputType.number,
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Padding(
-                  padding: padding,
-                  child: Text('Hourly rate',
+                  SizedBox(
+                    height: 5,
+                  ),
+                  field(
+                    'Travel/ Guide/ Both',
+                    Icons.card_travel,
+                    false,
+                    TextInputType.number,
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text('Hourly rate',
                       style: TextStyle(
                         fontFamily: 'Bold',
                         fontSize: 16,
                         color: Colors.black54,
                       )),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                field(
-                  'Enter your hourly rate',
-                  Icons.monetization_on,
-                  false,
-                  TextInputType.number,
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Padding(
-                  padding: padding,
-                  child: Text('District',
+                  SizedBox(
+                    height: 5,
+                  ),
+                  field(
+                    'Enter your hourly rate',
+                    Icons.monetization_on,
+                    false,
+                    TextInputType.number,
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text('District',
                       style: TextStyle(
                         fontFamily: 'Bold',
                         fontSize: 16,
                         color: Colors.black54,
                       )),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                field(
-                  'District',
-                  Icons.travel_explore,
-                  false,
-                  TextInputType.number,
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Padding(
-                  padding: padding,
-                  child: Text('Address',
+                  SizedBox(
+                    height: 5,
+                  ),
+                  field(
+                    'District',
+                    Icons.travel_explore,
+                    false,
+                    TextInputType.number,
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text('Address',
                       style: TextStyle(
                         fontFamily: 'Bold',
                         fontSize: 16,
                         color: Colors.black54,
                       )),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                field(
-                  'Address',
-                  Icons.place,
-                  false,
-                  TextInputType.number,
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Padding(
-                  padding: padding,
-                  child: Text('Short Description',
+                  SizedBox(
+                    height: 5,
+                  ),
+                  field(
+                    'Address',
+                    Icons.place,
+                    false,
+                    TextInputType.number,
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text('Short Description',
                       style: TextStyle(
                         fontFamily: 'Bold',
                         fontSize: 16,
                         color: Colors.black54,
                       )),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Center(
-                  child: Container(
-                    height: 90,
-                    width: 320,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(
-                        color: Colors.white54,
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Center(
+                    child: Container(
+                      height: 90,
+                      width: Get.width,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(
+                          color: Colors.white54,
+                        ),
                       ),
-                    ),
-                    child: TextField(
-                      keyboardType: TextInputType.multiline,
+                      child: TextField(
+                        keyboardType: TextInputType.multiline,
 
-                      // readOnly: true,
-                      decoration: InputDecoration(
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
-                          borderSide: BorderSide(
-                            color: Colors.transparent,
+                        // readOnly: true,
+                        decoration: InputDecoration(
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(
+                              color: Colors.transparent,
+                            ),
                           ),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
-                          borderSide: BorderSide(
-                            color: Colors.transparent,
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(
+                              color: Colors.transparent,
+                            ),
                           ),
+                          hintText: 'say something about yourself....',
+                          prefixIcon: Icon(
+                            Icons.info,
+                            size: 22,
+                            color: Colors.black45,
+                          ),
+                          fillColor: Colors.grey.shade100,
+                          filled: true,
                         ),
-                        hintText: 'say something about yourself....',
-                        prefixIcon: Icon(
-                          Icons.info,
-                          size: 22,
-                          color: Colors.black45,
-                        ),
-                        fillColor: Colors.grey.shade100,
-                        filled: true,
                       ),
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 30),
-                  child: Row(
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
                     children: [
                       Transform.scale(
                         scale: .70,
@@ -373,20 +339,17 @@ class _RegisterPageState extends State<RegisterPage> {
                         ' Agree with Terms & Conditions',
                         style: GoogleFonts.lato(
                           color: Colors.black87,
-                          fontSize: 12,
+                          fontSize: 13,
                         ),
                       ),
                     ],
                   ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 40),
-                  child: Container(
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Container(
                     height: 45,
-                    width: 320,
+                    width: Get.width,
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.blue.shade50),
                       color: HexColor('#c7ecee').withOpacity(.45),
@@ -403,11 +366,10 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                     ),
                   ),
-                ),
-                SizedBox(height: 30),
-                Padding(
-                  padding: EdgeInsets.only(left: 40),
-                  child: Row(
+                  SizedBox(height: 30),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
                         'Already have an account?  ',
@@ -440,11 +402,11 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                     ],
                   ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-              ],
+                  SizedBox(
+                    height: 20,
+                  ),
+                ],
+              ),
             ),
           ],
         ),
@@ -486,7 +448,7 @@ class _RegisterPageState extends State<RegisterPage> {
     return Center(
       child: Container(
         height: 50,
-        width: 320,
+        width: Get.width,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(20),

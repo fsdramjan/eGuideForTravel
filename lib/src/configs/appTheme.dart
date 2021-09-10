@@ -3,24 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class AppTheme {
-  static final Color catagoryHeaderColor = Colors.orange;
-  static final Color containerColor = HexColor('#c7ecee').withOpacity(.45);
-  static final Color containerPageColor = HexColor('262729');
-
   static Color white = HexColor('#ffffff');
   static Color scaffoldBackground = HexColor('#ffffff');
-  static Color textColor = HexColor('#2c3e50');
+  static Color textColor = Colors.black54;
   static Color fillColor = HexColor('#F2F7FB');
   static Color inputTextColor = HexColor('#8Q8D93');
-  static Color primaryColor = HexColor('#A19CF4');
+  static Color primaryColor = HexColor('#36b8c5');
   static Color accentColor = HexColor('#1C3E6C');
 
   static ThemeData appTheme = ThemeData(
     hoverColor: Colors.green,
     fontFamily: 'roboto',
-    scaffoldBackgroundColor: Colors.white,
+    scaffoldBackgroundColor: HexColor('#ecf0f1'),
     appBarTheme: AppBarTheme(
-      backgroundColor: Colors.white,
+      backgroundColor:  HexColor('#ecf0f1'),
       elevation: 0,
       iconTheme: IconThemeData(
         color: Colors.black,
@@ -38,12 +34,12 @@ class AppTheme {
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(20),
         borderSide: BorderSide(
-          color: AppTheme.containerColor,
+          color: HexColor('#c7ecee').withOpacity(.45),
         ),
       ),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(20),
-        borderSide: BorderSide(color: AppTheme.containerColor),
+        borderSide: BorderSide(color: HexColor('#c7ecee').withOpacity(.45)),
       ),
       fillColor: Colors.white,
       filled: true,

@@ -24,7 +24,7 @@ class KText extends StatelessWidget {
       '$text',
       style: TextStyle(
         fontSize: fontSize != null ? fontSize : 16,
-        fontFamily: fontFamily != null ? fontFamily : 'roboto',
+        fontFamily: fontFamily != null ? fontFamily : 'lato',
         color: color != null ? color : Colors.black,
         fontWeight: fontWeight != null ? fontWeight : FontWeight.normal,
       ),
